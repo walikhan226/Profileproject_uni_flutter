@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -24,6 +25,16 @@ class _ProfileState extends State<Profile> {
       });
     });
   }
+
+
+_launchURL() async {
+  const url = 'https://github.com/walikhan226/Profileproject_uni_flutter';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
 
   @override
   void initState() {
@@ -86,6 +97,10 @@ class _ProfileState extends State<Profile> {
               fontSize: 20,
             ),
           ),
+        
+
+
+
         ],
       ),
     );
