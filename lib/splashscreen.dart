@@ -22,6 +22,9 @@ class SplashScreenState extends State<SplashScreen>
   void navigationPage() {
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (BuildContext context) => Home()));
+  
+  
+  
   }
 
   @override
@@ -46,7 +49,7 @@ class SplashScreenState extends State<SplashScreen>
     _width = MediaQuery.of(context).size.width;
     _height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.green,
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[

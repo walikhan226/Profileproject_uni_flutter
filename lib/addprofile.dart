@@ -32,22 +32,14 @@ class _AddprofileState extends State<Addprofile> {
           autofocus: false,
           keyboardType: TextInputType.name,
           decoration: InputDecoration(
-            labelText: '$text',
             hintText: 'Enter your $text',
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red, width: 5.0),
+              borderSide: BorderSide(color: Colors.red, width: 1.0),
             ),
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.red, width: 2.0),
+              borderSide: BorderSide(color: Colors.red, width: 1.0),
             ),
             filled: false,
-            prefixIcon: Padding(
-              padding: EdgeInsets.only(right: 7.0),
-              child: Icon(
-                Icons.email,
-                color: Colors.red,
-              ),
-            ),
           ),
         ));
   }
@@ -156,8 +148,8 @@ class _AddprofileState extends State<Addprofile> {
         height: _height * 0.1,
         child: RaisedButton(
           shape: new RoundedRectangleBorder(
-              borderRadius: new BorderRadius.circular(30.0)),
-          color: Colors.red,
+              borderRadius: new BorderRadius.circular(0.0)),
+          color: Colors.green,
           onPressed: () async {
             SharedPreferences prefs = await SharedPreferences.getInstance();
 
@@ -182,15 +174,7 @@ class _AddprofileState extends State<Addprofile> {
               return;
             }
 
-            if (_image == null ) {
-              showInSnackBar("Please upload image");
-              return;
-            } else {
-              prefs.setString("image", _image.path);
-            }
-
-showInSnackBar("Profile Added");
-
+            showInSnackBar("Profile Added");
           },
           child: Text('Add Profile',
               style: TextStyle(
@@ -244,11 +228,12 @@ showInSnackBar("Profile Added");
               textfield("Name", namecontroller),
               textfield("Batch", batchcontroller),
               textfield("About Your self", descriptioncontroller),
-              SizedBox(height: 30,),
-              
-              decideImageiew(),
-              SizedBox(height: 30,),
-              decideimage(),
+              SizedBox(
+                height: 30,
+              ),
+              SizedBox(
+                height: 30,
+              ),
               button()
             ],
           ),

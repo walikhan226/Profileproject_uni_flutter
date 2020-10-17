@@ -26,20 +26,19 @@ class _ProfileState extends State<Profile> {
     });
   }
 
-
-_launchURL() async {
-  const url = 'https://github.com/walikhan226/Profileproject_uni_flutter';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
+  _launchURL() async {
+    const url = 'https://github.com/walikhan226/Profileproject_uni_flutter';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
-}
 
   @override
   void initState() {
     super.initState();
-  getdata();
+    getdata();
   }
 
   double _width, _height;
@@ -47,7 +46,7 @@ _launchURL() async {
   final picker = ImagePicker();
 
   Widget decideImageiew() {
-    if (filepath==null||filepath.isEmpty) {
+    if (filepath == null || filepath.isEmpty) {
       return Container(
           width: 140.0,
           height: 140.0,
@@ -82,25 +81,32 @@ _launchURL() async {
           SizedBox(
             height: 30,
           ),
-          decideImageiew(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                "My Profile",
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+              ),
+              decideImageiew(),
+            ],
+          ),
           SizedBox(
             height: 30,
           ),
           Text(
-            name==null?'No name':name,
+            name == null ? 'No name' : name,
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 15),
           Text(
-            description==null?'No description':description,
+            description == null ? 'No description' : description,
             style: TextStyle(
               fontSize: 20,
             ),
           ),
-        
-
-
-
         ],
       ),
     );

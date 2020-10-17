@@ -33,11 +33,11 @@ class _HomeState extends State<Home> {
     if (index == 2) {
       return Projects();
     }
-      if (index == 3) {
+    if (index == 3) {
       return Addcourse();
     }
 
-     if (index == 4) {
+    if (index == 4) {
       return Viewcourse();
     }
   }
@@ -49,107 +49,69 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Student Profile System"),
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.green,
       ),
       body: Center(child: mainUI()),
       drawer: Drawer(
-
-
         child: Container(
-         decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-         
-          colors: [
-        
-            Colors.blueAccent[700],
-            Colors.purple[600],
-     
-          ],
-        ),
-      ),
-        
-   
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [
+                Colors.white,
+                Colors.white,
+              ],
+            ),
+          ),
           child: ListView(
             children: [
               CircleAvatar(
                   maxRadius: 50, child: Image.asset("assets/images/logo.png")),
               Padding(
                 padding: EdgeInsets.only(left: 30, top: 30, bottom: 30),
-                child:
-                    Text("Sir Syed University of Engineering and Technology",
-                    
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                    ),
+                child: Text(
+                  "Sir Syed University of Engineering and Technology",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                  ),
+                ),
               ),
-              Card(
-                              child: ListTile(
-                  onTap: () {
-                    setState(() {
-                      index = 0;
-                    });
+              ListTile(
+                onTap: () {
+                  setState(() {
+                    index = 0;
+                  });
 
-                    Navigator.pop(context);
-                  },
-                  leading: Icon(Icons.person,color: Colors.redAccent),
-                  title: Text("Add  Profile"),
-                ),
+                  Navigator.pop(context);
+                },
+                leading: Icon(Icons.person, color: Colors.redAccent),
+                title: Text("Add  Profile"),
               ),
-              Card(
-                              child: ListTile(
-                  onTap: () {
-                    setState(() {
-                      index = 1;
-                    });
-                    Navigator.pop(context);
-                  },
-                  leading: Icon(Icons.camera_alt_outlined,color: Colors.redAccent),
-                  title: Text("Profile"),
-                ),
+              ListTile(
+                onTap: () {
+                  setState(() {
+                    index = 1;
+                  });
+                  Navigator.pop(context);
+                },
+                leading:
+                    Icon(Icons.camera_alt_outlined, color: Colors.redAccent),
+                title: Text("Profile"),
               ),
-              Card(
-                              child: ListTile(
-                  onTap: () {
-                    setState(() {
-                      index = 2;
-                    });
-                    Navigator.pop(context);
-                  },
-                  leading: Icon(Icons.paste_rounded,color: Colors.redAccent),
-                  title: Text("Projects"),
-                ),
+              ListTile(
+                onTap: () {
+                  setState(() {
+                    index = 2;
+                  });
+                  Navigator.pop(context);
+                },
+                leading: Icon(Icons.paste_rounded, color: Colors.redAccent),
+                title: Text("Projects"),
               ),
-              Card(
-
-
-         
-                              child: ListTile(
-                  onTap: () {
-                    setState(() {
-                      index = 3;
-                    });
-                    Navigator.pop(context);
-                  },
-                  leading: Icon(Icons.add_box_rounded,color: Colors.redAccent,),
-                  title: Text("Add Course"),
-                ),
-              ),
-              Card(
-                              child: ListTile(
-                  onTap: () {
-                    setState(() {
-                      index = 4;
-                    });
-                    Navigator.pop(context);
-                  },
-                  leading: Icon(Icons.view_list_sharp,color: Colors.redAccent),
-                  title: Text("View Course"),
-                ),
-              ),
+          
+           
             ],
           ),
         ),
